@@ -1,13 +1,13 @@
 package org.praveenmk.microservice.learn.userdetails.model;
 
-public class Response {
+public class ServiceResponse {
     private long id;
     private String statusMessage;
 
-    public Response() {
+    public ServiceResponse() {
     }
 
-    public Response(long id, String statusMessage) {
+    public ServiceResponse(long id, String statusMessage) {
         this.id = id;
         this.statusMessage = statusMessage;
     }
