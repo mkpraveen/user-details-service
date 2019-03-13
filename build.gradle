@@ -25,6 +25,10 @@ group = 'org.praveenmk.microservice.learn'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+ext {
+	set('springCloudVersion', 'Greenwich.SR1')
+}
+
 repositories {
     mavenCentral()
     mavenLocal()
@@ -36,5 +40,11 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	compile 'mysql:mysql-connector-java'
+	 implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
 }
